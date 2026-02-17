@@ -1,0 +1,9 @@
+{
+    "label": "Fortinet",
+    "position": 3,
+    "link": {
+        "type": "generated-index",
+        "slug": "fortinet",
+        "description": "Comprehensive documentation for Fortinet security solutions."
+    }
+}

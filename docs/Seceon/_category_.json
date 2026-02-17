@@ -1,0 +1,9 @@
+{
+    "label": "Seceon",
+    "position": 2,
+    "link": {
+        "type": "generated-index",
+        "slug": "seceon",
+        "description": "Documentation for Seceon SOAR and security operations."
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "label": "Qualys",
+    "position": 1,
+    "link": {
+        "type": "generated-index",
+        "slug": "qualys",
+        "description": "Comprehensive documentation for Qualys VMDR and ROC."
+    }
+}

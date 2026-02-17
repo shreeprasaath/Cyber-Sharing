@@ -1,0 +1,9 @@
+{
+    "label": "Splunk",
+    "position": 5,
+    "link": {
+        "type": "generated-index",
+        "slug": "splunk",
+        "description": "Documentation for Splunk SIEM and SOAR analytics."
+    }
+}

@@ -9,37 +9,37 @@ const CATEGORIES = [
   {
     title: 'Seceon',
     description: 'Security Operations & AI Documentation',
-    link: '/docs/Seceon/Seceon%20SOAR/Seceon%20SOAR%20Playbook%20&%20Use%20Cases',
+    link: '/docs/seceon',
     emoji: '🛡️',
   },
   {
     title: 'Qualys',
     description: 'Vulnerability Management & ROC Documentation',
-    link: '/docs/Qualys/Qualys%20VMDR/Vulnerability%20Management%20-%20Foundation/VM%20-%20Foundation',
+    link: '/docs/qualys',
     emoji: '🔍',
   },
   {
     title: 'Fortinet',
     description: 'Network Security & Firewall Documentation',
-    link: '/docs/Fortinet',
+    link: '/docs/fortinet',
     emoji: '🏰',
   },
   {
     title: 'Microsoft',
     description: 'Azure & Enterprise Documentation',
-    link: '/docs/Microsoft',
+    link: '/docs/microsoft',
     emoji: '💻',
   },
   {
     title: 'Splunk',
     description: 'Data Analytics & SIEM Documentation',
-    link: '/docs/Splunk',
+    link: '/docs/splunk',
     emoji: '📊',
   },
   {
     title: 'Tenable',
     description: 'Exposure Management Documentation',
-    link: '/docs/Tenable',
+    link: '/docs/tenable',
     emoji: '🏗️',
   },
 ];

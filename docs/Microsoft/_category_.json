@@ -1,0 +1,9 @@
+{
+    "label": "Microsoft",
+    "position": 4,
+    "link": {
+        "type": "generated-index",
+        "slug": "microsoft",
+        "description": "Documentation for Microsoft Defender and Sentinel platforms."
+    }
+}
