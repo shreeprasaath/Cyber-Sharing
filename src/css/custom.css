@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
   --ifm-color-primary: #3884ff;
@@ -8,37 +8,45 @@
   --ifm-color-primary-light: #5294ff;
   --ifm-color-primary-lighter: #6ba2ff;
   --ifm-color-primary-lightest: #a1c6ff;
-  
+
   --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --ifm-font-size-base: 16px;
   --ifm-line-height-base: 1.6;
 
-  /* GitBook shades */
+  /* GitBook & Premium Shades */
   --gitbook-bg: #ffffff;
-  --gitbook-sidebar-bg: #f7f7f7;
-  --gitbook-text: #111827;
-  --gitbook-text-secondary: #6B7280;
-  --gitbook-border: #e5e7eb;
+  --gitbook-sidebar-bg: #f8fafc;
+  --gitbook-text: #0f172a;
+  --gitbook-text-secondary: #64748b;
+  --gitbook-border: #f1f5f9;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #3884ff 0%, #7c3aed 100%);
+  --gradient-surface: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 
   --ifm-navbar-background-color: var(--gitbook-bg);
-  --ifm-navbar-height: 60px;
-  
+  --ifm-navbar-height: 64px;
+
   --ifm-footer-background-color: var(--gitbook-bg);
   --ifm-footer-color: var(--gitbook-text-secondary);
-  
-  --ifm-pre-padding: 1rem;
-  --ifm-code-font-size: 0.9rem;
+
+  --ifm-pre-padding: 1.25rem;
+  --ifm-code-font-size: 0.875rem;
+  --ifm-button-border-radius: 8px;
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #3884ff;
-  --gitbook-bg: #1a1a1a;
-  --gitbook-sidebar-bg: #111111;
-  --gitbook-text: #f9fafb;
-  --gitbook-border: #333333;
+  --ifm-color-primary: #60a5fa;
+  --gitbook-bg: #0f172a;
+  --gitbook-sidebar-bg: #020617;
+  --gitbook-text: #f8fafc;
+  --gitbook-text-secondary: #94a3b8;
+  --gitbook-border: #1e293b;
+  --gradient-surface: linear-gradient(180deg, #0f172a 0%, #020617 100%);
 }
 
 /* Sidebar Styling */
+.sidebar_src-theme-DocSidebar-Desktop-styles-module,
 .theme-doc-sidebar-container {
   background-color: var(--gitbook-sidebar-bg);
   border-right: 1px solid var(--gitbook-border);
@@ -47,68 +55,143 @@
 .menu__link {
   font-weight: 500;
   color: var(--gitbook-text-secondary);
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  color: var(--ifm-color-primary);
+  background-color: rgba(56, 132, 255, 0.05);
 }
 
 .menu__link--active {
   color: var(--ifm-color-primary) !important;
-  background-color: rgba(56, 132, 255, 0.1) !important;
-}
-
-.menu__list-item-collapsible:hover {
-  background: transparent;
+  background-color: rgba(56, 132, 255, 0.08) !important;
+  font-weight: 600;
 }
 
 /* Header Styling */
 .navbar {
   border-bottom: 1px solid var(--gitbook-border);
   box-shadow: none;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: rgba(15, 23, 42, 0.8);
 }
 
 .navbar__title {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: 1.25rem;
+}
+
+/* Hero Section Refinement */
+.hero-gradient {
+  background: var(--gradient-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(56, 132, 255, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Category Grid on Homepage */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 0;
+}
+
+.category-card {
+  background: var(--gitbook-bg);
+  border: 1px solid var(--gitbook-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 12px 24px -10px rgba(56, 132, 255, 0.15);
+}
+
+.category-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--gitbook-text);
+}
+
+.category-card p {
+  color: var(--gitbook-text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-btn {
+  background: var(--ifm-color-primary);
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.85rem;
+  width: fit-content;
 }
 
 /* Content Area */
 .container {
-  max-width: 900px !important;
+  max-width: 1000px !important;
+}
+
+.markdown {
+  color: var(--gitbook-text);
 }
 
 .markdown h1 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.04em;
   margin-bottom: 2rem;
 }
 
-.markdown h2 {
-  font-size: 1.5rem;
-  border-bottom: none;
-  margin-top: 2.5rem;
-}
-
-/* Ad Placeholders */
+/* Ad Placeholders (Minimalist) */
 .ad-sidebar-container {
-  padding: 1rem;
+  padding: 1.25rem;
   margin-top: auto;
   border-top: 1px solid var(--gitbook-border);
 }
 
 .ad-content-container {
-  margin: 3rem 0;
-  padding: 1.5rem;
+  margin: 4rem 0;
+  padding: 2rem;
   background: var(--gitbook-sidebar-bg);
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
-  border: 1px dashed var(--gitbook-border);
+  border: 1px solid var(--gitbook-border);
 }
 
 .ad-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
   color: var(--gitbook-text-secondary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
 }
